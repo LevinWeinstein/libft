@@ -6,7 +6,7 @@
 /*   By: lweinste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/25 09:14:40 by lweinste          #+#    #+#             */
-/*   Updated: 2016/09/26 16:07:57 by lweinste         ###   ########.fr       */
+/*   Updated: 2016/10/02 18:52:29 by lweinste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strstr(const char *big, const char *little)
 
 	b = big;
 	l = little;
-	if (*l == '\0' || l == NULL)
+	if (l == NULL || *l == '\0')
 		return ((char *)big);
 	while (*big)
 	{

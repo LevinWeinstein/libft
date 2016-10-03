@@ -6,36 +6,35 @@
 /*   By: lweinste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/25 20:47:14 by lweinste          #+#    #+#             */
-/*   Updated: 2016/09/26 16:18:46 by lweinste         ###   ########.fr       */
+/*   Updated: 2016/10/02 18:39:33 by lweinste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+int		ft_atoi(const char *s)
 {
-	char			c;
+	char	*str;
 	unsigned long	output;
 	unsigned int	nextdigit;
 	int				negative;
 
-	c = *str;
+	str = (char *)s;
 	output = 0;
 	negative = 1;
-	while (c == ' ' || c == '\t' || c == '\v' ||
-			c == '\f' || c == '\n' || c == '\r')
-		c = *str++;
-	if (c == '-')
+	while (*str == ' ' || *str == '\t' || *str == '\v' ||
+			*str == '\f' || *str == '\n' || *str == '\r')
+		str++;
+	if (*str == '+')
+		str++;
+	else if (*str == '-')
 	{
 		negative = -1;
-		c = *str++;
+		str++;
 	}
-	while ((c = *str++) != '\0')
+	while (*str != '\0' && *str >= '0' && *str <= '9')
 	{
-		if (c >= '0' && c <= '9')
-			nextdigit = (unsigned int)(c - '0');
-		else
-			break ;
+		nextdigit = (unsigned int)(*str++ - '0');
 		output = ((output * 10) + nextdigit);
 	}
 	return ((int)output * negative);
