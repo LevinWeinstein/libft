@@ -6,13 +6,13 @@
 /*   By: lweinste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/27 22:23:08 by lweinste          #+#    #+#             */
-/*   Updated: 2016/10/07 00:46:10 by lweinste         ###   ########.fr       */
+/*   Updated: 2016/10/07 15:55:43 by lweinste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int		ft_abs(int n)
+static	int			ft_abs(int n)
 {
 	if (n < 0)
 		n *= -1;
@@ -29,7 +29,7 @@ static	char		*handle_zeros(void)
 	return (output);
 }
 
-static int		digits(int n)
+static int			digits(int n)
 {
 	int dig;
 
@@ -42,7 +42,7 @@ static int		digits(int n)
 	return (dig);
 }
 
-char			*ft_itoa(int n)
+char				*ft_itoa(int n)
 {
 	int		dig;
 	int		neg;

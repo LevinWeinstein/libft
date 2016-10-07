@@ -6,7 +6,7 @@
 /*   By: lweinste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/27 02:28:15 by lweinste          #+#    #+#             */
-/*   Updated: 2016/10/07 00:46:33 by lweinste         ###   ########.fr       */
+/*   Updated: 2016/10/07 15:56:19 by lweinste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int		only_spaces(const char *s)
 	return (1);
 }
 
-char	*ft_strtrim(char const *s)
+char			*ft_strtrim(char const *s)
 {
 	char			*output;
 	int				i;
