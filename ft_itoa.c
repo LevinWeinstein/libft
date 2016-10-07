@@ -6,20 +6,20 @@
 /*   By: lweinste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/27 22:23:08 by lweinste          #+#    #+#             */
-/*   Updated: 2016/09/27 23:56:56 by lweinste         ###   ########.fr       */
+/*   Updated: 2016/10/07 00:46:10 by lweinste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_abs(int n)
+static	int		ft_abs(int n)
 {
 	if (n < 0)
 		n *= -1;
 	return (n);
 }
 
-char			*handle_zeros(void)
+static	char		*handle_zeros(void)
 {
 	char	*output;
 

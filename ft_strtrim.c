@@ -6,18 +6,18 @@
 /*   By: lweinste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/27 02:28:15 by lweinste          #+#    #+#             */
-/*   Updated: 2016/09/27 06:04:23 by lweinste         ###   ########.fr       */
+/*   Updated: 2016/10/07 00:46:33 by lweinste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		only_spaces(const char *s)
+static int		only_spaces(const char *s)
 {
 	int		i;
 
 	i = 0;
-	while (s[i] != '\0' && s[i] != '\t' && s[i] != ' ' && s[i] != '\n')
+	while (s[i] != '\0' && (s[i] == '\t' || s[i] == ' ' || s[i] == '\n'))
 		i++;
 	if (i < (int)ft_strlen(s))
 		return (0);

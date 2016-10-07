@@ -6,7 +6,7 @@
 /*   By: lweinste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/24 21:00:16 by lweinste          #+#    #+#             */
-/*   Updated: 2016/09/28 21:54:41 by lweinste         ###   ########.fr       */
+/*   Updated: 2016/10/06 23:08:46 by lweinste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memccpy(void *d, const void *s, int c, size_t n)
 	size_t	size;
 
 	if (n == 0 || d == s)
-		return (d);
+		return (NULL);
 	size = 0;
 	temp1 = (char *)d;
 	temp2 = (char *)s;

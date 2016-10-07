@@ -6,7 +6,7 @@
 /*   By: lweinste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/21 16:22:27 by lweinste          #+#    #+#             */
-/*   Updated: 2016/09/25 03:32:02 by lweinste         ###   ########.fr       */
+/*   Updated: 2016/10/06 23:07:08 by lweinste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_bzero(void *s, size_t n)
 	s_char = (char *)s;
 	while (n > 0)
 	{
-		*s_char = '\0';
+		*s_char = 0;
 		s_char++;
 		n--;
 	}

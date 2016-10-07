@@ -6,7 +6,7 @@
 /*   By: lweinste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/25 20:47:14 by lweinste          #+#    #+#             */
-/*   Updated: 2016/10/02 18:39:33 by lweinste         ###   ########.fr       */
+/*   Updated: 2016/10/04 16:34:51 by lweinste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_atoi(const char *s)
 {
-	char	*str;
+	char			*str;
 	unsigned long	output;
 	unsigned int	nextdigit;
 	int				negative;
