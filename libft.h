@@ -6,7 +6,7 @@
 /*   By: lweinste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/24 22:15:27 by lweinste          #+#    #+#             */
-/*   Updated: 2016/10/07 00:48:23 by lweinste         ###   ########.fr       */
+/*   Updated: 2016/12/08 12:00:25 by lweinste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ typedef	struct	s_list
 	struct s_list	*next;
 }				t_list;
 
+char			*ft_itoa_base(intmax_t value, int base);
+char			*ft_utoa_base(uintmax_t value, int base);
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *s, size_t n);
 void			*ft_memcpy(void	*d, const void *s, size_t n);
@@ -32,6 +34,7 @@ void			*ft_memchr(const void *s, int c, size_t n);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
 size_t			ft_strlen(const char *s);
 char			*ft_strdup(const char *s1);
+char			*ft_strndup(const char *s1, size_t n);
 char			*ft_strcpy(char *d, const char *s);
 char			*ft_strncpy(char *d, const char *s, size_t len);
 char			*ft_strcat(char *s1, const char *s2);
