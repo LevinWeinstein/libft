@@ -6,7 +6,7 @@
 /*   By: lweinste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/24 22:15:27 by lweinste          #+#    #+#             */
-/*   Updated: 2016/12/08 12:00:25 by lweinste         ###   ########.fr       */
+/*   Updated: 2016/12/13 16:14:32 by lweinste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h>
 
 typedef	struct	s_list
 {
@@ -24,7 +25,8 @@ typedef	struct	s_list
 }				t_list;
 
 char			*ft_itoa_base(intmax_t value, int base);
-char			*ft_utoa_base(uintmax_t value, int base);
+char			*ft_utoa_base_lower(uintmax_t value, int base);
+char			*ft_utoa_base_upper(uintmax_t value, int base);
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *s, size_t n);
 void			*ft_memcpy(void	*d, const void *s, size_t n);

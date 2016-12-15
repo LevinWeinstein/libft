@@ -6,7 +6,7 @@
 /*   By: exam <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 09:03:01 by exam              #+#    #+#             */
-/*   Updated: 2016/11/29 23:57:31 by lweinste         ###   ########.fr       */
+/*   Updated: 2016/12/15 01:02:18 by lweinste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ static char		*str_zero(void)
 	return (output);
 }
 
-static intmax_t	abs_val(intmax_t n)
+static long	abs_val(long n)
 {
 	return (n >= 0 ? n : (n * -1));
 }
 
-static intmax_t		safe_abs_mod(intmax_t n, int base)
+static long	safe_abs_mod(long n, int base)
 {
 	int m;
 
@@ -38,7 +38,7 @@ static intmax_t		safe_abs_mod(intmax_t n, int base)
 	return (abs_val(m));
 }
 
-static intmax_t		get_digits(intmax_t value, int base)
+static long		get_digits(long value, int base)
 {
 	int i;
 
@@ -51,7 +51,7 @@ static intmax_t		get_digits(intmax_t value, int base)
 	return (i);
 }
 
-char			*ft_itoa_base(intmax_t value, int base)
+char			*ft_itoa_base(long value, int base)
 {
 	int		negative;
 	int		digits;

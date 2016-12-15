@@ -6,14 +6,14 @@
 /*   By: exam <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 09:03:01 by exam              #+#    #+#             */
-/*   Updated: 2016/11/29 23:57:31 by lweinste         ###   ########.fr       */
+/*   Updated: 2016/12/15 04:58:54 by lweinste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 static char		g_values[] = {'0', '1', '2', '3', '4', '5',
-	'6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+	'6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
 
 static char		*str_zero(void)
 {
@@ -25,20 +25,15 @@ static char		*str_zero(void)
 	return (output);
 }
 
-static int	abs_val(int n)
+static uintmax_t		safe_mod(uintmax_t n, int base)
 {
-	return (n >= 0 ? n : (n * -1));
-}
-
-static int		safe_abs_mod(int n, int base)
-{
-	int m;
+	uintmax_t m;
 
 	m = n % base;
-	return (abs_val(m));
+	return (m);
 }
 
-static int		get_digits(int value, int base)
+static int		get_digits(uintmax_t value, int base)
 {
 	int i;
 
@@ -51,29 +46,22 @@ static int		get_digits(int value, int base)
 	return (i);
 }
 
-char			*ft_ltoa_base(int value, int base)
+char			*ft_utoa_base_lower(uintmax_t value, int base)
 {
-	int		negative;
 	int		digits;
 	char	*output;
-	int		safemod;
+	uintmax_t		safemod;
 
-	printf("%s\n", "scoopies");
 	if (base < 2 || base > 16)
 		return ((char *)0);
 	if (value == 0)
 		return ((output = str_zero()));
-	negative = ((value < 0 && base == 10) ? 1 : 0);
 	digits = get_digits(value, base);
-	digits += negative;
 	output = (char *)malloc((digits + 1) * sizeof(char));
 	output[digits] = '\0';
-	printf("%s\n", "scoopies");
-	if (negative)
-		output[0] = '-';
 	while (value != 0)
 	{
-		safemod = safe_abs_mod(value, base);
+		safemod = safe_mod(value, base);
 		output[--digits] = g_values[safemod];
 		value /= base;
 	}

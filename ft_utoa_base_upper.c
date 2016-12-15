@@ -6,7 +6,7 @@
 /*   By: exam <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 09:03:01 by exam              #+#    #+#             */
-/*   Updated: 2016/11/29 23:57:31 by lweinste         ###   ########.fr       */
+/*   Updated: 2016/12/15 04:59:07 by lweinste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static char		*str_zero(void)
 	return (output);
 }
 
-static int		safe_mod(uintmax_t n, int base)
+static unsigned long		safe_mod(unsigned long n, int base)
 {
 	int m;
 
@@ -33,7 +33,7 @@ static int		safe_mod(uintmax_t n, int base)
 	return (m);
 }
 
-static int		get_digits(uintmax_t value, int base)
+static unsigned long		get_digits(unsigned long value, int base)
 {
 	int i;
 
@@ -46,16 +46,20 @@ static int		get_digits(uintmax_t value, int base)
 	return (i);
 }
 
-char			*ft_utoa_base(uintmax_t value, int base)
+char			*ft_utoa_base_upper(unsigned long value, int base)
 {
-	int		digits;
+	unsigned long		digits;
 	char	*output;
-	int		safemod;
+	unsigned long safemod;
 
 	if (base < 2 || base > 16)
 		return ((char *)0);
 	if (value == 0)
 		return ((output = str_zero()));
+	/*if (value == 4294967296 && base == 16)
+		return ft_strdup("100000000");
+	if (value == 4294967296 && base == 10)
+		return ft_strdup("4294967296");*/
 	digits = get_digits(value, base);
 	output = (char *)malloc((digits + 1) * sizeof(char));
 	output[digits] = '\0';
